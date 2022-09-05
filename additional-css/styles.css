@@ -206,18 +206,6 @@ nav.site-navigation li ul a:hover {
 
 /*Columns rules*/
 
-@media (min-width: 600px) and (max-width: 821px) {
-  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
-    flex-basis: calc(100%)!important;
-    flex-grow: 0!important;
-    margin: 1%;
-  }
-  .wp-block-latest-posts.columns-4 li {
-    width: calc(47%);
-    margin: 1%;
-  }
-}
-
 .wp-block-latest-posts__post-excerpt {
   font-size: 18px;
 }
@@ -229,17 +217,19 @@ nav.site-navigation li ul a:hover {
 }
 
 @media (min-width: 1199px) {
-  .wp-block-latest-posts.columns-3 {
+  .wp-block-latest-posts.columns-3,
+  .wp-block-latest-posts.columns-4 {
     justify-content: space-between;
     padding-left: 0;
     margin-left: 0;
   }
   .wp-block-latest-posts.columns-3 li {
-    width: calc(30% - 0.1em);
+    width: calc(33% - 0.1em);
     margin: 0em;
   }
-  .wp-block-column.home-page-columns-block {
-    flex-basis: 25%!important;
+  .wp-block-latest-posts.columns-4 li {
+    width: calc(50% - 0.1em);
+    margin: 0 0.3em 0 0;
   }
   .archive .wp-block-latest-posts__list.is-grid.columns-3 li {
     width: calc(31.3%);
@@ -250,9 +240,6 @@ nav.site-navigation li ul a:hover {
 }
 
 @media (max-width: 1199px) and (min-width: 600px) {
-  .wp-block-column.home-page-columns-block {
-    flex-basis: 25%!important;
-  }
   .wp-block-latest-posts.columns-3,
   .wp-block-latest-posts.columns-4 {
     justify-content: space-between;
@@ -539,6 +526,10 @@ html {
   scroll-behavior: smooth;
 }
 
+h2.two-lines {
+  line-height: 2.38em;
+}
+
 h2.home-page,
 .privacy-policy h1,
 .privacy-policy h2,
@@ -579,7 +570,9 @@ table, p, li {
   line-height: 34px;
 }
 
-#comments .comment .comment-body, #comments .pingback .comment-body, #comments p {
+#comments .comment .comment-body,
+#comments .pingback .comment-body,
+#comments p {
   font-size: 18px;
   line-height: 31px;
 }
