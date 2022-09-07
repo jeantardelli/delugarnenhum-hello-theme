@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php endif; ?>
 	<div class="page-content">
 		<?php if ( have_posts() ) : ?>
-		<ul class="wp-block-latest-posts__list is-grid columns-3 has-dates aligncenter wp-block-latest-posts">
+		<ul class="wp-block-latest-posts__list is-grid columns-4 has-dates aligncenter recent-posts-home wp-block-latest-posts">
 		<?php
 			global $wp;
 			$s_array = array( 'posts_per_page' => 6 ); 
@@ -38,8 +38,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<?php get_first_category_of_a_post () ?>
 					</div>
 					<div class="post__text">
-						<?php printf( '<h2 class="%s"><a href="%s">%s</a></h2>', 'entry-title', esc_url( $post_link ), esc_html( get_the_title() ) );
-				the_excerpt(); ?>
+                                                <?php printf( '<h2 class="%s"><a href="%s">%s</a></h2>', 
+						              'entry-title',
+							      esc_url( $post_link ),
+							      esc_html( get_the_title() )
+						            );
+				                      the_excerpt(); ?>
 					</div>
 					<div class="post__meta-data">
 						<span class="post__date"><?php $published_date = wp_date( 'd/m/Y', date ( get_the_date('U') ) ); echo ( $published_date );?></span>
@@ -53,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php else : ?>
 		<p>
 			<?php echo ( 'Desculpe! Não encontramos o destino que você procura: ') ?>
-			<span><?php echo get_search_query(); ?></span>
+			<span><b><?php echo get_search_query(); ?></b></span>
 		</p>
 		<p><?php
 			echo ( 'Porém, já anotamos a sua busca e, em breve, escreveremos algo sobre isso!' );
@@ -61,14 +65,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</p>
 		<p>
 			<?php echo ( 'Que tal ler sobre outro tema?' ); ?>
+			<?php get_search_form(); ?>
 		</p>
 		<h2 class="de-lugar-nenhum-posts-busca">Posts Recentes</h2>
-		<ul class="wp-block-latest-posts__list is-grid columns-4 has-dates aligncenter recent-posts-busca wp-block-latest-posts">
+		<ul class="wwp-block-latest-posts__list is-grid columns-4 has-dates aligncenter recent-posts-home wp-block-latest-posts">
 			<?php $posts = get_posts( 'orderby=date&numberposts=4'); 
 		foreach($posts as $post) { ?>
 			<li>		
 				<div class="wp-block-latest-posts__featured-image aligncenter">
-					<a href=<?php the_permalink();?>><?php the_post_thumbnail(); ?></a>
+					<a href=<?php the_permalink();?>>
+						<?php the_post_thumbnail($size = 'large-size'); ?></a>
 				</div>
 				<h3 class="posts-related-content">
 					<a href=<?php the_permalink(); ?>><?php the_title();?></a>	
@@ -99,4 +105,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php echo do_shortcode( '[mc4wp_form id="1458"]' ); ?>
 	<p>© 2022 De Lugar Nenhum. Todos os direitos reservados.</p>
 </main>
-

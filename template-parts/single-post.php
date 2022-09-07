@@ -100,25 +100,43 @@ while ( have_posts() ) :
 			<?php comments_template(); ?>
 		</div>
 		<div class="wp-block-column de-lugar-nenhum-post-coluna-dois" style="flex-basis:23.99%">
-			<h2 class="has-text-align-left home-page" id="h-navegue">Navegue</h2>
+			<?php $post_title = get_the_title();
+                  if (strlen($post_title) > 56) {
+	                       $var = 'two-lines';
+                         } else {
+	                       $var = "one-line";
+                         } ?>
+			<h2 class="<?php echo 'has-text-align-left home-page' .' '.$var ?>" id="h-navegue">Navegue</h2>
 			<div class="ads-space-top">
 			<?php get_search_form(); ?>
 			<br />
 			<div class="ads-space">
-			<a href="https://www.booking.com/index.html?aid=939617" target="_blank" rel="nofollow"><center><img src="https://delugarnenhum.com/wp-content/uploads/2020/12/booking.jpg" alt="booking" loading="lazy"></center>
+			<a href="https://www.booking.com/index.html?aid=939617" target="_blank" rel="nofollow">
+			    <center>
+				<img src="https://delugarnenhum.com/wp-content/uploads/2020/12/booking.jpg" alt="booking" loading="lazy">
+                            </center>
 			</a>	
 			<br />
 			</div>
 			<div class="ads-space">
-			<a href="https://www.segurospromo.com.br/?utm_medium=afiliado&pcrid=5235&utm_source=site-blog&cupom=EMNENHUMLUGAR5" target="_blank" rel="nofollow"><center><img src="https://delugarnenhum.com/wp-content/uploads/2021/01/banner_SP-menorpreco_336x280.png" alt="seguros-promo-logo" loading="lazy"></center>
+			<a href="https://www.segurospromo.com.br/?utm_medium=afiliado&pcrid=5235&utm_source=site-blog&cupom=EMNENHUMLUGAR5" target="_blank" rel="nofollow">
+			    <center>
+			       <img src="https://delugarnenhum.com/wp-content/uploads/2021/01/banner_SP-menorpreco_336x280.png" alt="seguros-promo-logo" loading="lazy">
+                            </center>
 			</a>
 			<br />
 			</div>
-			<a href="https://www.civitatis.com/br/?aid=13128" target="_blank" rel="nofollow"><center><img src="https://delugarnenhum.com/wp-content/uploads/2021/08/civitatis_logo-2048x848.png" alt="civitats-logo" loading="lazy"></center>
+			<a href="https://www.civitatis.com/br/?aid=13128" target="_blank" rel="nofollow">
+			    <center>
+				<img src="https://delugarnenhum.com/wp-content/uploads/2021/08/civitatis_logo-2048x848.png" alt="civitats-logo" loading="lazy">
+                            </center>
 			</a>		
 			<br />
 			<div class="ads-space">
-			<a href="https://www.hostelworld.com/?source=affiliate-PHG-1011ljghf&affiliate=PHG&ref_id=1100lj6EQotL" target="_blank" rel="nofollow"><center><img src="https://delugarnenhum.com/wp-content/uploads/2021/08/hostelworld.webp" alt="hostel-word-logo" loading="lazy"></center>
+			<a href="https://www.hostelworld.com/?source=affiliate-PHG-1011ljghf&affiliate=PHG&ref_id=1100lj6EQotL" target="_blank" rel="nofollow">
+			    <center>
+				<img src="https://delugarnenhum.com/wp-content/uploads/2021/08/hostelworld.webp" alt="hostel-word-logo" loading="lazy">
+                            </center>
 			</a>				
 			</div>
 			</div>
@@ -161,7 +179,4 @@ while ( have_posts() ) :
 	<p>© 2022 De Lugar Nenhum. Todos os direitos reservados.</p>
 	<div class="back-to-top-wrapper"><a class="back-to-top-link" href="#top"><button id="mybtn">↑</button></a></div>
 </main>
-
-	<?php
-endwhile;
-
+<?php endwhile;

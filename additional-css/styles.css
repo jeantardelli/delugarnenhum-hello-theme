@@ -216,6 +216,12 @@ nav.site-navigation li ul a:hover {
   }
 }
 
+@media (min-width: 782px) and (max-width: 1200px) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column[style*=flex-basis] {
+    flex-grow: 1;
+  }
+}
+
 @media (min-width: 1199px) {
   .wp-block-latest-posts.columns-3,
   .wp-block-latest-posts.columns-4 {
@@ -230,9 +236,6 @@ nav.site-navigation li ul a:hover {
   .wp-block-latest-posts.columns-4 li {
     width: calc(50% - 0.1em);
     margin: 0 0.3em 0 0;
-  }
-  .archive .wp-block-latest-posts__list.is-grid.columns-3 li {
-    width: calc(31.3%);
   }
   ul.columns-4.recent-posts-home {
     flex-wrap: initial;
@@ -253,9 +256,6 @@ nav.site-navigation li ul a:hover {
   .wp-block-latest-posts.columns-4 li {
     width: calc(50% - 0.1em);
     margin: 0em;
-  }
-  .archive .wp-block-latest-posts__list.is-grid.columns-3 li {
-    width: width: calc(50% - 0.1em);
   }
 }
 
@@ -527,7 +527,7 @@ html {
 }
 
 h2.two-lines {
-  line-height: 2.38em;
+    line-height: 2.38em;
 }
 
 h2.home-page,
@@ -570,9 +570,7 @@ table, p, li {
   line-height: 34px;
 }
 
-#comments .comment .comment-body,
-#comments .pingback .comment-body,
-#comments p {
+#comments .comment .comment-body, #comments .pingback .comment-body, #comments p {
   font-size: 18px;
   line-height: 31px;
 }

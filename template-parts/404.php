@@ -22,14 +22,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<br />
 		<p><?php echo( "Ou, se preferir, ler algum de nossos posts recentes:" ); ?></p>
 		<h2 class="de-lugar-nenhum-posts-404">Posts Recentes</h2>
-		<ul class="wp-block-latest-posts__list is-grid columns-4 has-dates aligncenter recent-posts-404 wp-block-latest-posts">
+		<ul class="wp-block-latest-posts__list is-grid columns-4 has-dates aligncenter recent-posts-home wp-block-latest-posts">
 			<?php $posts = get_posts( 'orderby=date&numberposts=4'); 
 		foreach($posts as $post) { ?>
 			<li>		
 				<div class="wp-block-latest-posts__featured-image aligncenter">
-					<a href=<?php the_permalink();?>><?php the_post_thumbnail(); ?></a>
+					<a href=<?php the_permalink();?>>
+						<?php the_post_thumbnail($size = 'large-size'); ?></a>
 				</div>
-				<h3 class="posts-related-content">
+				<h3 class="wp-block-latest-posts__post-title posts-related-content">
 					<a href=<?php the_permalink(); ?>><?php the_title();?></a>	
 				</h3>
 				<div class="wp-block-latest-posts__post-excerpt"><?php the_excerpt(); ?></div>
