@@ -570,10 +570,44 @@ table, p, li {
   line-height: 34px;
 }
 
+/* Comments */
+
+#comments .comment-meta {
+  display: block;
+}
+
+#comments .comment-metadata, #comments .reply {
+    font-size: 13px;
+    line-height: 22px;
+}
+
 #comments .comment .comment-body, #comments .pingback .comment-body, #comments p {
   font-size: 18px;
   line-height: 31px;
 }
+
+h2#h-fique-por-dentro {
+  text-align: center;
+}
+
+/* Mailchimp */
+
+#mc_embed_signup {
+  clear:left; font:14px Roboto,Arial,sans-serif;
+}
+
+.mc4wp-alert.mc4wp-notice p, .mc4wp-alert.mc4wp-success p {
+  color: black;
+  text-align: center;
+}
+
+#mc_embed_signup input.email {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Top Button */
 
 @media (min-width: 1200px) {
   .back-to-top-wrapper {
